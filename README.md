@@ -3,6 +3,7 @@ WhatsApp Bot auto Reply with Simsimi API
 
 ![Simsimi-MD](./src/image.png)
 
+## Install
 ```bash
 git clone https://github.com/yaelahda/Simsimi-MD
 cd Simsimi-MD
