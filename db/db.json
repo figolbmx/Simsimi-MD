@@ -1,0 +1,15 @@
+{
+    "stats": {
+        "msgSent": 86,
+        "msgRecv": 90,
+        "filesize": 1,
+        "autodownload": 1,
+        "sticker": 1,
+        "cmd": 1
+    },
+    "config": {
+        "session_id": "",
+        "removeBG": "",
+        "musixMatch": ""
+    }
+}
