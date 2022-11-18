@@ -1,6 +1,7 @@
 # Simsimi-MD
-![Simsimi-MD](./src/image.png)
 WhatsApp Bot auto Reply with Simsimi API
+
+![Simsimi-MD](./src/image.png)
 
 ```bash
 git clone https://github.com/yaelahda/Simsimi-MD
