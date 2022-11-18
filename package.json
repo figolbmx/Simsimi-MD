@@ -1,6 +1,6 @@
 {
   "name": "Simsimi-MD",
-  "version": "1.2.51",
+  "version": "0.1.0",
   "description": "WhatsApp Bot auto Reply with Simsimi API",
   "main": "index.js",
   "type": "commonjs",
