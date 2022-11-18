@@ -6,6 +6,7 @@ git clone https://github.com/yaelahda/Simsimi-MD
 cd Simsimi-MD
 npm install
 npm start
+```
 
 ## Dependencies
 - [adiwajshing/baileys-md](https://github.com/adiwajshing/Baileys/tree/multi-device/) - WhatsApp Web Api
