@@ -190,7 +190,7 @@ const start = async () => {
             
             //random
             let ms = [1000, 2000, 4000, 5000, 4500, 6000];
-            let randomms = ms[Math.floor(Math.random() * ms.length)];
+            let randomms = 0; //ms[Math.floor(Math.random() * ms.length)];
             const dontbadword = "gaboleh ngomong kasar, dosa 😡";
             const hola = ["haiiii", "halooooww", "helloowww", "hai juga", "halo jugaa"] 
             let emot = ["🤣", "😳", "🤨", "😂", "😭", "🥰", "😡", ":)", ":*)", ":*("];
@@ -243,38 +243,38 @@ const start = async () => {
                     const similo = body.toLowerCase()
                     var reqsimia = replaceEmoji(similo);
                     var reqsimi = urlencode(reqsimia).toLowerCase();
-                    const simiu = await fetch(`https://api.simsimi.net/v2/?text=${reqsimi}&lc=id`, { method: "GET" })
+                    const simiu = await fetch(`https://simsimi.info/api/?text=${reqsimi}&lc=id`, { method: "GET" })
                     .then(async res => {
                         const data = await res.json()
                             return data
                         })
                     
-                    if (simiu.success === "Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku." || simiu.success === "please enter the text - text=hello" || simiu.success === "= 20/100" || simiu.success === "Jawaban untuk ini adalah dilarang"){
+                    if (simiu.message === "Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku." || simiu.message === "please enter the text - text=hello" || simiu.message === "= 20/100" || simiu.message === "Jawaban untuk ini adalah dilarang"){
       	                console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), color(`simi gagal paham`, `red`), color(pushname, '#38ef7d'), "\n")
 	                } else if (jawab === 0) {
                         await delay(randomms)
                         await client.sendPresenceUpdate('composing', from);
-                        client.sendMessage(m.chat, {text : simiu.success+randomemot});
+                        client.sendMessage(m.chat, {text : simiu.message+randomemot});
                         console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), msgs(m.text), `~> ${(tipe)} from`, color(pushname, '#38ef7d'))
-                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.success, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
+                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.message, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
 	                } else if (jawab === 1) {
                         await delay(randomms)
                         await client.sendPresenceUpdate('composing', from);
-                        reply(simiu.success+randomemot);
+                        reply(simiu.message+randomemot);
                         console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), msgs(m.text), `~> ${(tipe)} from`, color(pushname, '#38ef7d'))
-                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.success, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
+                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.message, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
 	                } else if (jawab === 2) {
                         await delay(randomms)
                         await client.sendPresenceUpdate('composing', from);
-                        client.sendMessage(m.chat, {text : simiu.success});
+                        client.sendMessage(m.chat, {text : simiu.message});
                         console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), msgs(m.text), `~> ${(tipe)} from`, color(pushname, '#38ef7d'))
-                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.success, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
+                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.message, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
 	                } else {
                         await delay(randomms)
                         await client.sendPresenceUpdate('composing', from);
-                        reply(simiu.success);
+                        reply(simiu.message);
                         console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), msgs(m.text), `~> ${(tipe)} from`, color(pushname, '#38ef7d'))
-                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.success, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
+                        console.log('[MSG]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), simiu.message, `~>`, bgColor(color(" Jawaban ", 'black'), '#FAFFD1'), `from`, color(`Simi`, '#38ef7d'), "\n")
 	                }
                 } else {
                   console.log('[ETC]', color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), '#A1FFCE'), msgs(m.text), `~> ${(tipe)} from`, color(pushname, '#38ef7d'), `\n`)
